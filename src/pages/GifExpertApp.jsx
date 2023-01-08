@@ -1,9 +1,15 @@
 import { useState } from "react";
-import { AddCategory } from "./components/AddCategory";
-import { GifGrid } from "./components/GifGrid";
+import { AddCategory } from "../components/AddCategory";
+import { GifGrid } from "../components/GifGrid";
 
-const GifExpertApp = () => {
-  const [category, setCategories] = useState([]);
+import { useSearchParams } from "react-router-dom";
+
+export const GifExpertApp = () => {
+  const [params, setParams] = useSearchParams();
+
+  const paramethers = params.getAll("q");
+
+  const [category, setCategories] = useState(paramethers);
 
   const handleReset = () => {
     return setCategories([]);
@@ -19,7 +25,11 @@ const GifExpertApp = () => {
     <>
       <h2>GiftExpertApp</h2>
       <hr />
-      <AddCategory setCategories={setCategories} />
+      <AddCategory
+        setCategories={setCategories}
+        setParams={setParams}
+        category={category}
+      />
       <br />
       <button
         className="px-2 mt-2 rounded-md bg-gray-300"
@@ -41,5 +51,3 @@ const GifExpertApp = () => {
     </>
   );
 };
-
-export default GifExpertApp;

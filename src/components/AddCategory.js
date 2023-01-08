@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { PropTypes } from "prop-types";
 
-export const AddCategory = ({ setCategories }) => {
+export const AddCategory = ({ setCategories, setParams, category }) => {
   const [inputValue, setInputValue] = useState("");
 
   const handleInputValue = (e) => {
@@ -13,6 +13,9 @@ export const AddCategory = ({ setCategories }) => {
 
     if (inputValue.trim().length > 2) {
       setCategories((cats) => [inputValue, ...cats]);
+      setParams({
+        q: [inputValue, ...category],
+      });
       setInputValue("");
     }
   };
