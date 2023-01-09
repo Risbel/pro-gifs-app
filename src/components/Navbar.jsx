@@ -5,22 +5,25 @@ export const Navbar = () => {
   return (
     <nav className="flex mb-6">
       <NavLink
-        style={({ isActive }) => ({ background: isActive && "white" })}
-        className="mr-2 px-1 rounded-md"
+        className={({ isActive }) =>
+          isActive ? "bg-white mr-2 px-1 rounded-md" : "mr-2 px-1"
+        }
         to={"/"}
       >
         Home
       </NavLink>
       <NavLink
-        style={({ isActive }) => ({ background: isActive && "white" })}
-        className="mr-2 px-1 rounded-md"
+        className={({ isActive }) =>
+          isActive ? "bg-white mr-2 px-1 rounded-md" : "mr-2 px-1"
+        }
         to={"/app"}
       >
         Get Started
       </NavLink>
       <NavLink
-        style={({ isActive }) => ({ background: isActive && "white" })}
-        className="mr-2 px-1 rounded-md"
+        className={({ isActive }) =>
+          isActive ? "bg-white mr-2 px-1 rounded-md" : "mr-2 px-1"
+        }
         to={"/details"}
       >
         Details
