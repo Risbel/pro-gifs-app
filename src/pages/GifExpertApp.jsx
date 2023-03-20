@@ -11,40 +11,39 @@ export const GifExpertApp = () => {
 
   const [category, setCategories] = useState(paramethers);
 
-  const handleReset = () => {
+  //----------------------------handlersClicks--------------
+
+  const reset = () => {
     return setCategories([]);
   };
 
-  const handleDeletLastCat = () => {
-    const Last = category.length - 1;
+  const last = category.length - 1;
 
-    return setCategories(category.splice(0, Last));
+  const deletLastCat = () => {
+    return setCategories(category.splice(0, last));
+  };
+
+  const deleteFirsCAt = () => {
+    return setCategories(category.splice(1, last));
   };
 
   return (
     <>
-      <h2>GiftExpertApp</h2>
-      <hr />
-      <AddCategory
-        setCategories={setCategories}
-        setParams={setParams}
-        category={category}
-      />
-      <br />
-      <button
-        className="px-2 mt-2 rounded-md bg-gray-300"
-        onClick={handleReset}
-      >
-        Reset
-      </button>
-      <br />
-      <button
-        className="px-2 mt-2 rounded-md bg-gray-300"
-        onClick={handleDeletLastCat}
-      >
-        Delete last category
-      </button>
-
+      <h2 className="flex justify-center text-slate-100 text-md md:text-2xl pt-16">GiftExpertApp</h2>
+      <div className="flex flex-col items-center px-2 md:px-8 text-slate-700 text-sm md:text-xl">
+        <AddCategory setCategories={setCategories} setParams={setParams} category={category} />
+        <div className="flex gap-2 text-[12px] md:text-xl">
+          <button className="px-2 hover:bg-red-600 hover:text-white  rounded-md bg-gray-300" onClick={deleteFirsCAt}>
+            Delete firs category
+          </button>
+          <button className="px-2 hover:bg-red-600 hover:text-white rounded-md bg-gray-300" onClick={reset}>
+            Reset
+          </button>
+          <button className="px-2 hover:bg-red-600 hover:text-white  rounded-md bg-gray-300" onClick={deletLastCat}>
+            Delete last category
+          </button>
+        </div>
+      </div>
       {category.map((cat) => {
         return <GifGrid category={cat} key={cat} />;
       })}
