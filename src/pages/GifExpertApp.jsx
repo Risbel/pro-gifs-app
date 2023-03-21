@@ -4,7 +4,7 @@ import { GifGrid } from "../components/GifGrid";
 
 import { useSearchParams } from "react-router-dom";
 
-export const GifExpertApp = () => {
+const GifExpertApp = () => {
   const [params, setParams] = useSearchParams();
 
   const paramethers = params.getAll("q");
@@ -50,3 +50,5 @@ export const GifExpertApp = () => {
     </>
   );
 };
+
+export default GifExpertApp;

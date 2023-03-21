@@ -1,6 +1,6 @@
 import React from "react";
-import { RutesTree } from "./rutes";
+import { RoutesTree } from "./routes";
 
 export const App = () => {
-  return <RutesTree />;
+  return <RoutesTree />;
 };
