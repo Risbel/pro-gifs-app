@@ -20,8 +20,8 @@ export const GifGrid = ({ category }) => {
 
       <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 px-8">
         {images.map((img) => (
-          <div className="animate__animated animate__fadeIn">
-            <GifGridItem key={img.id} {...img} />
+          <div key={img.id} className="animate__animated animate__fadeIn">
+            <GifGridItem {...img} />
           </div>
         ))}
       </div>
