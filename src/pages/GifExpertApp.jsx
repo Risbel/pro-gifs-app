@@ -32,14 +32,23 @@ const GifExpertApp = () => {
       <h2 className="flex justify-center text-slate-100 text-md md:text-2xl pt-16">GiftExpertApp</h2>
       <div className="flex flex-col items-center px-2 md:px-8 text-slate-700 text-sm md:text-xl">
         <AddCategory setCategories={setCategories} setParams={setParams} category={category} />
-        <div className="flex gap-2 text-[12px] md:text-xl">
-          <button className="px-2 hover:bg-red-600 hover:text-white  rounded-md bg-gray-300" onClick={deleteFirsCAt}>
+        <div className="flex gap-2 text-[12px] md:text-lg">
+          <button
+            className="flex leading-tight items-center py-1 px-1 hover:bg-indigo-700 hover:text-white rounded-md bg-gray-300"
+            onClick={deleteFirsCAt}
+          >
             Delete firs category
           </button>
-          <button className="px-2 hover:bg-red-600 hover:text-white rounded-md bg-gray-300" onClick={reset}>
+          <button
+            className="flex leading-tight items-center py-1 px-1 hover:bg-indigo-700 hover:text-white rounded-md bg-gray-300"
+            onClick={reset}
+          >
             Reset
           </button>
-          <button className="px-2 hover:bg-red-600 hover:text-white  rounded-md bg-gray-300" onClick={deletLastCat}>
+          <button
+            className="flex leading-tight items-center py-1 px-1 hover:bg-indigo-700 hover:text-white  rounded-md bg-gray-300"
+            onClick={deletLastCat}
+          >
             Delete last category
           </button>
         </div>
